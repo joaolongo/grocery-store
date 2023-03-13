@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/devcontainers/templates/tree/main/src/dotnet
+
+{
+	"name": "Grocery Store",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:0-7.0",
+	"features": {
+		"ghcr.io/devcontainers/features/docker-from-docker:1": {},
+		"ghcr.io/devcontainers/features/dotnet:1": {},
+		"ghcr.io/devcontainers/features/git:1": {}
+	},
+	"appPort": 80,
+	"forwardPorts": [4200, 5000, 5001],
+	"portsAttributes": {
+		"3000": {
+			"label": "Hello Remote World",
+			"onAutoForward": "notify"
+		}
+	},
+	"customizations": {
+
+		"vscode": {	
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash",
+				"explorer.fileNesting.patterns": {
+					"appsettings.json": "appsettings.*.json"
+				},
+				"explorer.fileNesting.enabled": true
+			},
+			"extensions": [
+				"ms-dotnettools.csharp",
+				"ms-azuretools.vscode-docker",
+				"davidanson.vscode-markdownlint",
+				"fernandoescolar.vscode-solution-explorer",
+				"patcx.vscode-nuget-gallery",
+				"visualstudioexptteam.vscodeintellicode",
+				"ms-dotnettools.vscode-dotnet-pack"
+			]
+		}
+	},
+	"remoteUser": "vscode"
+}
