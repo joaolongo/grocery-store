@@ -1,0 +1,23 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="inputDescription" class="form-label">Offer Description</label>
+    <input formControlName="description" type="text" class="form-control" id="inputDescription">
+  </div>
+  <div class="mb-3">
+    <label for="inputDiscount" class="form-label">Item Discount</label>
+    <input formControlName="percentage" type="number" step="0.01"  class="form-control" id="inputDiscount">
+  </div>
+  <div class="mb-3">
+    <label for="inputReqAmount" class="form-label">Required purchase amount for offer to be valid</label>
+    <input formControlName="requiredAmount" type="number" step="1"  class="form-control" id="inputReqAmount">
+  </div>
+  <div class="mb-3">
+    <label for="inputAssociatedItemId" class="form-label">Associated Item Id</label>
+    <input formControlName="itemId" type="text" class="form-control" id="inputAssociatedItemId">
+  </div>
+  <div class="mb-3">
+    <label for="inputDiscountItemId" class="form-label">Discount Item Id</label>
+    <input formControlName="discountItemId" type="text" class="form-control" id="inputDiscountItemId">
+  </div>
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>

@@ -6,4 +6,5 @@ public interface IService<T> where T : Entity
 {
     Task<List<T>> GetAll();
     Task<T?> Get(Guid id);
+    Task Create(T item);
 }

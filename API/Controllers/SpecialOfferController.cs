@@ -18,6 +18,18 @@ public class SpecialOfferController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<SpecialOffer>>> Get()
     {
-        return Ok(await _service.GetAll());
+        var offers = await _service.GetAll();
+
+        var result = offers.Select(x => new
+        {
+            x.Id,
+            ItemId = x.Item.Id,
+            x.Description,
+            x.Percentage,
+            x.RequiredAmount,
+            DiscountItemId = x.DiscountItem?.Id
+        });
+        
+        return Ok(result);
     }
 }

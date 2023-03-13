@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Price</th>
+    <th scope="col">Has Special Offer?</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items; index as i">
+    <th scope="row">{{ item.id }}</th>
+    <td>{{ item.name | titlecase }}</td>
+    <td>£{{ item.price | number }}</td>
+    <td>{{item.hasOffer ? "Yes" : "No"}}</td>
+    <td><a class="btn btn-link" routerLink="/item/edit/{{item.id}}">Edit</a></td>
+  </tr>
+  </tbody>
+</table>
+
+<a class="btn btn-link" routerLink="/item/create">New Item</a>

@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Description</th>
+    <th scope="col">Discount</th>
+    <th scope="col">Required purchase amount for offer to be valid</th>
+    <th scope="col">Associated Item Id</th>
+    <th scope="col">Discount Item Id</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let offer of offers; index as i">
+    <th scope="row">{{ offer.id }}</th>
+    <td>{{ offer.description | titlecase }}</td>
+    <td>{{ offer.percentage | percent }}</td>
+    <td>{{ offer.requiredAmount | number }}</td>
+    <td>{{ offer.itemId |  lowercase}}</td>
+    <td>{{ offer.discountItemId |  lowercase}}</td>
+    <td><a class="btn btn-link" routerLink="/offer/edit/{{offer.id}}">Edit</a></td>
+  </tr>
+  </tbody>
+</table>
+
+<a class="btn btn-link" routerLink="/offer/create">New Offer</a>
